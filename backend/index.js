@@ -14,7 +14,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
     origin:'https://projectblog-frontend.onrender.com',
-    credentials:true //https://projectblog-frontend.onrender.com
+    credentials:true 
 }))
 const _dirname = path.resolve()
 

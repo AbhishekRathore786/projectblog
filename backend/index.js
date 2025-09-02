@@ -27,6 +27,9 @@ app.use(express.static(path.join(_dirname,'/frontend/dist')))
 // })
 // http://localhost:8000/api/v1/user/register
 const PORT = process.env.PORT || 3000
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
 
 app.listen(PORT,()=>{
     connectDB()

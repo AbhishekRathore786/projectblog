@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import { Link } from 'react-router-dom'
-import HeroImage from '../assets/HeroImage.png'
+import HeroImage from '../assets/heroImage.png'
 const Hero = () => {
   return (
     // <div className='px-4 md:px-0'>

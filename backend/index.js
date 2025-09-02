@@ -12,10 +12,11 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({extended:true}))
-app.use(cors({
-    origin:'https://projectblog-frontend.onrender.com',
-    credentials:true 
-}))
+// app.use(cors({
+//     origin:'https://projectblog-frontend.onrender.com',
+//     credentials:true 
+// }))
+app.use(cors())
 const _dirname = path.resolve()
 
 app.use('/api/v1/user',userrouter)

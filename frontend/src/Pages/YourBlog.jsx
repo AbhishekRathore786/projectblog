@@ -86,7 +86,7 @@ const YourBlog = () => {
   const navigate = useNavigate()
   const getOwnBlog = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/blog/get-own-blogs`,
+      const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/blog/get-own-blogs`,
         { withCredentials: true })
       if (res.data.success) {
         dispatch(setBlog(res.data.blogs))
@@ -97,7 +97,7 @@ const YourBlog = () => {
   }
   const deleteBlog = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:8000/api/v1/blog/delete/${id}`, {
+      const res = await axios.delete(`https://projectblog-2.onrender.com/api/v1/blog/delete/${id}`, {
         withCredentials: true
       })
       if (res.data.success) {

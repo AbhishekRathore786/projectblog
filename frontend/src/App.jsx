@@ -16,6 +16,8 @@ import UpdateBloag from './Pages/UpdateBloag'
 import BlogView from './Pages/BlogView'
 import Footer from './components/Footer'
 import SearchList from './Pages/SearchList'
+
+
 const router =createBrowserRouter([
   {
     path:'/',

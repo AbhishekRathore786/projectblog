@@ -73,7 +73,7 @@ const BlogView = () => {
             //     withCredentials: true
             // })
             const res = await axios.get(
-                `http://localhost:8000/api/v1/blog/${selectedBlog._id}/${action}`,
+                `https://projectblog-2.onrender.com/api/v1/blog/${selectedBlog._id}/${action}`,
                 {
                     withCredentials: true 
                 }

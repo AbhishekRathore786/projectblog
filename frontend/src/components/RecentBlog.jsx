@@ -16,7 +16,7 @@ const RecentBlog = () => {
     useEffect(() => {
         const getAllPublishedBlog = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/api/v1/blog/getPublishedBlog`)
+                const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/blog/getPublishedBlog`)
                 if (res.data.success) {
                     dispatch(setBlog(res.data.blogs))
                 }

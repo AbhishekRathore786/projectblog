@@ -4,7 +4,7 @@ import { Avatar, AvatarImage } from '@radix-ui/react-avatar'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 // import React, { useState } from 'react'
-import userLogo from '../assets/userLogo.jpg'
+import userLogo from '../assets/userlogo.jpg'
 import { Link } from 'react-router-dom'
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { Label } from '@radix-ui/react-dropdown-menu'

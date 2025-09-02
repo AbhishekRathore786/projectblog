@@ -13,7 +13,7 @@ import { LiaCommentSolid } from "react-icons/lia";
 import { setUser } from '../redux/authSlice.js'
 import { CgProfile } from "react-icons/cg";
 import { LuLogOut } from "react-icons/lu";
-import userLogo from '../assets/userLogo.jpg'
+import userLogo from '../assets/userlogo.jpg'
 import { toast } from 'sonner'
 
 import {

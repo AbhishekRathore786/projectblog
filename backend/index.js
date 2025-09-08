@@ -60,7 +60,8 @@ const _dirname = path.resolve()
 app.use(cors({
     origin:'https://projectblog-frontend2.onrender.com',
     credentials:true
-}))     
+})) 
+    
 app.use('/api/v1/user',userrouter)
 app.use('/api/v1/blog',blogrouter)
 app.use('/api/v1/comment',router)

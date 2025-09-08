@@ -69,11 +69,11 @@ const BlogView = () => {
             const isCurrentlyLiked = liked;
             const action = isCurrentlyLiked ? 'dislike' : "like";
 
-            // const res = await axios.post(`http://localhost:8000/api/v1/blog/${selectedBlog._id}/${action}`, {
+            // const res = await axios.post(`https://projectblog-3.onrender.com/api/v1/blog/${selectedBlog._id}/${action}`, {
             //     withCredentials: true
             // })
             const res = await axios.get(
-                `http://localhost:8000/api/v1/blog/${selectedBlog._id}/${action}`,
+                `https://projectblog-3.onrender.com/api/v1/blog/${selectedBlog._id}/${action}`,
                 {
                     withCredentials: true 
                 }

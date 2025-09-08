@@ -10,7 +10,7 @@ const Blogs = () => {
   useEffect(()=>{
     const getAllPublishedBlog=async()=>{
       try {                           // mene isko change kara he  getPublishedBlog --> get-published-blog
-         const res = await axios.get(`http://localhost:8000/api/v1/blog/get-published-blog`,{
+         const res = await axios.get(`https://projectblog-3.onrender.com/api/v1/blog/get-published-blog`,{
           withCredentials:true
           
          })

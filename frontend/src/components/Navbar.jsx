@@ -40,7 +40,7 @@ const navbar = () => {
   const navigate = useNavigate()
   const logoutHandler = async (e) => {
     try {
-      const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/user/logout`, { withCredentials: true })
+      const res = await axios.get(`http://localhost:8000/api/v1/user/logout`, { withCredentials: true })
       if (res.data.success) {
         navigate('/')
         dispatch(setUser(null))
@@ -59,7 +59,7 @@ const navbar = () => {
     }
   }
   return (
-    <div className='py-2 fixed w-full dark:bg-gray-800 dark:borderr-b-gray-600 border-b-gray-300 border- bg-white z-50'>
+    <div className='py-2 fixed w-full  bg-gray-200  dark:bg-gray-800  border-b-gray-300'>
       <div className='max-w-7x1 mx-auto flex justify-between items-center px-4 md:px-0'>
         {/* logo section/ */}
         <div className='flex gap-7 items-center'>

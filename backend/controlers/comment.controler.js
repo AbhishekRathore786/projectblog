@@ -105,7 +105,7 @@ export const likeComment= async(req,res)=>{
         const commentId =req.params.id
         const comment = await Comment.findById(commentId).populate("userId")
         if(!comment){
-            res.status(401).json({
+          return  res.status(401).json({
                 message:"comment not found",
                 success:false
             })
@@ -144,7 +144,7 @@ export const getAllCommentOwnMyBlog = async(req,res)=>{
         const myBlogs = await Blog.find({author:userId}).select("_id")
         const blogIds = myBlogs.map(blog=>blog._id) // kyo lenght lene ke liye 
         if(blogIds.length===0){
-            res.status(200).json({
+           return res.status(200).json({
                 success:true,
                 totalComment:0,
                 comments:[],
@@ -152,14 +152,14 @@ export const getAllCommentOwnMyBlog = async(req,res)=>{
             })
         }
         const comments = await Comment.find({postId:{$in:blogIds}}).populate("userId", "firstName lastName email").populate("postId","title")
-        res.status(201).json({
+      return  res.status(201).json({
             success:true,
             totalComments:comments.length,
             comments
         })
     } catch (error) {
         console.log('error in getting all comments on my blog'+error)
-        res.status(500).json({
+       return res.status(500).json({
             message:"error from the server side ",
             success:false
         })

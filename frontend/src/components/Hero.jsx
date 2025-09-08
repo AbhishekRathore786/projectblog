@@ -63,10 +63,10 @@ const Hero = () => {
     {/* Text Section */}
     <div className="max-w-2xl">
       <h1 className="text-4xl md:text-6xl font-bold mb-4">
-        Explore the latest tech & web trends
+        Explore the different ways to live  a healthy life ..........
       </h1>
       <p className="text-lg md:text-xl opacity-80 mb-6">
-        Technology is evolving very fast, so we should move with it to stay updated and learn the latest innovations.
+              <h2> Taste our efforts where we grind technology and knowledge to give an AROMA of healthy and joyful lifestyle   !</h2>
       </p>
       <div className="flex space-x-4">
         <Link to={'/signup'}>

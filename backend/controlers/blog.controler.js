@@ -38,8 +38,7 @@ export const updateBlog = async (req, res) => {
         const file = req.file
         let blog = await Blog.findById(blogId)
         if (!blog) {
-            return
-            res.status(404).json({
+            return res.status(404).json({
                 message: "Blog not found for updation"
             })
         }
@@ -128,10 +127,15 @@ export const deleteBlog = async (req, res) => {
 
 
 export const getPublishedBlog = async (_, res) => {
-    try {
-        const blogs = await Blog.find({ isPublished: true }).sort({ createdAt: -1 }).populate({
+    // try {
+    //     const blogs = await Blog.find({ isPublished: true }).sort({ createdAt: -1 }).populate({
+    //         path: 'author',
+    //         select: (firstName, lastName, photourl)
+    //     })
+        try {
+        const blogs = await Blog.find({ isPublished: true }).populate({
             path: 'author',
-            select: (firstName, lastName, photourl)
+            select:('firstName lastName photourl')
         })
         if (!blogs) {
             res.status(401).json({
@@ -149,6 +153,8 @@ export const getPublishedBlog = async (_, res) => {
             message: "failed  to get published blog"
         })
     }
+    // console.log("Fetched blogs:", blogs.length)
+
 }
 
 

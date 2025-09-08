@@ -33,7 +33,7 @@ const Login = () => {
       // console.log(input)
       try {
         dispatch(setLoading(true))
-        const res = await axios.post(`https://projectblog-2.onrender.com/api/v1/user/login`,input,{
+        const res = await axios.post(`http://localhost:8000/api/v1/user/login`,input,{
           headers:{
             "Content-Type":"application/json"
           },
@@ -42,7 +42,8 @@ const Login = () => {
         if(res.data.success){
           dispatch(setUser(res.data.user))
           navigate('/')
-         toast.success(res.data.message)
+         toast.success(`Welcome ${res.data.user.firstName}`)
+        // toast.success(`Welcome ${users.firstName} !`)
                       // toast.success(users.firstName)
 
 }

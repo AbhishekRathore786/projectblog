@@ -4,7 +4,7 @@ import React from 'react'
 import Aboutimg from '../assets/about.jpg'
 const About = () => {
   return (
-    <div className="pt-20 px-6 md:px-20 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white min-h-screen">
+    <div className="pt-20 px-6 md:px-20 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">About Us</h1>

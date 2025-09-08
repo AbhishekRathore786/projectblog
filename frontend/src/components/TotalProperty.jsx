@@ -14,7 +14,7 @@ const TotalProperty = () => {
 
     const getOwnBlog = async () => {
         try {
-            const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/blog/get-own-blogs`, {
+            const res = await axios.get(`http://localhost:8000/api/v1/blog/get-own-blogs`, {
                 withCredentials: true
             })
             if (res.data.success) {
@@ -27,7 +27,7 @@ const TotalProperty = () => {
 
     const getTotalComment = async () => {
         try {
-            const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/comment/my-blogs/comments`, {
+            const res = await axios.get(`http://localhost:8000/api/v1/comment/my-blogs/comments`, {
                 withCredentials: true
             })
             if (res.data.success) {
@@ -41,7 +41,7 @@ const TotalProperty = () => {
     }
     const getTotalLike = async () => {
         try {
-            const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/blog/my-blogs/likes`, {
+            const res = await axios.get(`http://localhost:8000/api/v1/blog/my-blogs/likes`, {
                 withCredentials: true
             })
             if (res.data.success) {

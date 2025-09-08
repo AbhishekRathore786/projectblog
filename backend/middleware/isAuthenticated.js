@@ -44,7 +44,7 @@ export const isAuthenticated = (req, res, next) => {
             });
         }
 
-        req.id = decode.userId; // ✅ Attach to req, not res
+        req.id = decode.userId; //
         next();
     } catch (error) {
         console.log("Error in authentication", error); // Add error detail

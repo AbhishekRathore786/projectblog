@@ -73,7 +73,7 @@ const BlogView = () => {
             //     withCredentials: true
             // })
             const res = await axios.get(
-                `https://projectblog-2.onrender.com/api/v1/blog/${selectedBlog._id}/${action}`,
+                `http://localhost:8000/api/v1/blog/${selectedBlog._id}/${action}`,
                 {
                     withCredentials: true 
                 }
@@ -155,8 +155,8 @@ const BlogView = () => {
 
                 <div className='mt-10'>
                     <div className='flex flex-wrap gap-2 mb-8'>
-                        <Badge variant='secondary' className='dark:bg-gray-800'>Next.js</Badge>
-                        <Badge variant='secondary' className='dark:bg-gray-800'>reat.js</Badge>
+                        {/* <Badge variant='secondary' className='dark:bg-gray-800'>Next.js</Badge> */}
+                        {/* <Badge variant='secondary' className='dark:bg-gray-800'>reat.js</Badge> */}
                     </div>
                     {/* commentss  */}
                     <div className='flex items-center justify-between border-y dark:border-gray-800 border-gray-300 py-4 mb-8'>

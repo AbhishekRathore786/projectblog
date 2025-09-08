@@ -41,7 +41,7 @@ export const register = async (req, res) => {
 
         return res.status(201).json({
             success: true,
-            message: "account created successfuly"
+            message: `account created successfuly ${req.body.firstName}`
         })
     } catch (error) {
         console.log("error in user controler")
@@ -102,53 +102,53 @@ export const logout = async (__, res) => {
     }
 }
 
-export const updateProfile = async (req, res) => {
-    try {
-        // console.log("updating")
-        const userId = req.id
-        const { firstName, lastName, occupation, bio, instagram, facebook, linkedin, github } = req.body
-        const file = req.file;
-        const user = await User.findById(userId).select('-password')
-        // const fileUri = await getDataUri(file)
-        // let cloudResponse = await cloudinary.uploader.upload(fileUri)
-        // console.log(cloudResponse)
-        if (file) {
-            const fileUri = await getDataUri(file);
-            const cloudResponse = await cloudinary.uploader.upload(fileUri);
-            user.photourl = cloudResponse.secure_url;
+    export const updateProfile = async (req, res) => {
+        try {
+            // console.log("updating")
+            const userId = req.id
+            const { firstName, lastName, occupation, bio, instagram, facebook, linkedin, github } = req.body
+            const file = req.file;
+            const user = await User.findById(userId).select('-password')
+            // const fileUri = await getDataUri(file)
+            // let cloudResponse = await cloudinary.uploader.upload(fileUri)
+            // console.log(cloudResponse)
+            if (file) {
+                const fileUri = await getDataUri(file);
+                const cloudResponse = await cloudinary.uploader.upload(fileUri);
+                user.photourl = cloudResponse.secure_url;
+            }
+            if (!user) {
+                console.log("user nor found")
+                return res.status(404).json({
+                    message: "user not found",
+                    success: false
+                })
+            }
+            if (firstName) user.firstName = firstName;
+            if (lastName) user.lastName = lastName;
+            if (occupation) user.occupation = occupation
+            if (instagram) user.instagram = instagram;
+            if (facebook) user.facebook = facebook;
+            if (linkedin) user.linkedin = linkedin;
+            if (github) user.github = github;
+            if (bio) user.bio = bio;
+            // if (file) user.photourl = cloudResponse.secure_url;
+            await user.save()
+            return res.status(200).json({
+                message: "file updated ",
+                success: true,
+                user
+            })
+
         }
-        if (!user) {
-            console.log("user nor found")
-            return res.status(404).json({
-                message: "user not found",
+        catch (error) {
+            console.log("error  from the server " + error)
+            return res.status(500).json({
+                message: "Failed to update the profile",
                 success: false
             })
         }
-        if (firstName) user.firstName = firstName;
-        if (lastName) user.lastName = lastName;
-        if (occupation) user.occupation = occupation
-        if (instagram) user.instagram = instagram;
-        if (facebook) user.facebook = facebook;
-        if (linkedin) user.linkedin = linkedin;
-        if (github) user.github = github;
-        if (bio) user.bio = bio;
-        // if (file) user.photourl = cloudResponse.secure_url;
-        await user.save()
-        return res.status(200).json({
-            message: "file updated ",
-            success: true,
-            user
-        })
-
     }
-    catch (error) {
-        console.log("error  from the server " + error)
-        return res.status(500).json({
-            message: "Failed to update the profile",
-            success: false
-        })
-    }
-}
 
 export const getAllUsers =async(req,res)=>{
     try {

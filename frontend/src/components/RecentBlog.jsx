@@ -13,21 +13,9 @@ const RecentBlog = () => {
     const dispatch = useDispatch()
     const navigate  = useNavigate()
     const { blog } = useSelector(store => store.blog)
-    useEffect(() => {
-        const getAllPublishedBlog = async () => {
-            try {
-                const res = await axios.get(`https://projectblog-2.onrender.com/api/v1/blog/getPublishedBlog`)
-                if (res.data.success) {
-                    dispatch(setBlog(res.data.blogs))
-                }
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        // getAllPublishedBlog()
-    })
+ 
     return (
-        <div className='bg-gray-100 dark:bg-gray-800 pb-10 min-h-screen'>
+        <div className='bg-gray-200 dark:bg-gray-800 pb-10 min-h-screen'>
             <div className='max-w-6xl mx-auto flex flex-col space-y-4 items-center'>
                 <h1 className='text-4xl font-bold pt-10'>
                     Recent blogs

@@ -69,7 +69,7 @@ const Profile = () => {
         }
         try {
             dispatch(setLoading(true))
-            const res = await axios.put(`https://projectblog-2.onrender.com/api/v1/user/profile/update`, formData, {
+            const res = await axios.put(`http://localhost:8000/api/v1/user/profile/update`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
@@ -98,7 +98,7 @@ const Profile = () => {
                         <Avatar className='w-40 h-40 border-2 overflow-hidden'>
                             <AvatarImage src={user.photourl || userLogo} alt='' className='w-full h-full object-cover' />
                         </Avatar>
-                        <h1 className='text-center font-semibold text-xl text-gray-700 dark:text-gray-500 my-3'> {user.occupation || 'MERN stack developer'}</h1>
+                        <h1 className='text-center font-semibold text-xl text-gray-700 dark:text-gray-500 my-3'> {user.occupation || 'Writer'}</h1>
                         <div className='flex gap-4 items-center'>
                             <Link to={user.facebook}><FaFacebook className='w-6 h-6 text-gray-800 dark:text-gray-300' /></Link>
                             <Link><FaLinkedin className='w-6 h-6 text-gray-800 dark:text-gray-300' /></Link>

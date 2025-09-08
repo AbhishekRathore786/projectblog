@@ -71,7 +71,7 @@ const UpdateBloag = () => {
         try {
             dispatch(setLoading(true))
             // console.log("i am form-data in try updateblog   " + formData)
-            const res = await axios.put(`https://projectblog-2.onrender.com/api/v1/blog/${id}`, formData, {
+            const res = await axios.put(`http://localhost:8000/api/v1/blog/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }, withCredentials: true
@@ -92,7 +92,7 @@ const UpdateBloag = () => {
     const togglePublishUnPublished = async () => {
         try {
 
-            const res = await axios.patch(`https://projectblog-2.onrender.com/api/v1/blog/${id}`,
+            const res = await axios.patch(`http://localhost:8000/api/v1/blog/${id}`,
                 {
                     withCredentials: true
                 })
@@ -110,7 +110,7 @@ const UpdateBloag = () => {
     }
     const deleteBlog = async (id) => {
         try {
-            const res = await axios.delete(`https://projectblog-2.onrender.com/api/v1/blog/delete/${id}`, {
+            const res = await axios.delete(`http://localhost:8000/api/v1/blog/delete/${id}`, {
                 withCredentials: true
             })
             if (res.data.success) {

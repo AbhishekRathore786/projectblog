@@ -52,15 +52,15 @@ app.use(express.urlencoded({extended:true}))
 //     origin:'https://projectblog-frontend.onrender.com',
 //     credentials:true 
 // }))
-<<<<<<< HEAD
-app.use(cors())
-=======
->>>>>>> 9195c73 (changes saved)
+
+// app.use(cors())
+
+
 const _dirname = path.resolve()
 app.use(cors({
     origin:'http://localhost:5173',
     credentials:true
-}))
+}))     
 app.use('/api/v1/user',userrouter)
 app.use('/api/v1/blog',blogrouter)
 app.use('/api/v1/comment',router)
@@ -75,13 +75,13 @@ app.use(express.static(path.join(__dirname, '/frontend/dist')))
 // })
 // http://localhost:8000/api/v1/user/register
 
-<<<<<<< HEAD
-app.listen(PORT,()=>{
-    connectDB()
-    console.log("server is runign  "+PORT)
-})
-=======
 const PORT = process.env.PORT || 3000
+
+// app.listen(PORT,()=>{
+//     connectDB()
+//     console.log("server is runign  "+PORT)
+// })
+
 // app.get("/", (req, res) => {
 //   res.send("API is running 🚀");
 // });
@@ -103,4 +103,3 @@ const startServer = async () => {
 }
 
 startServer()
->>>>>>> 9195c73 (changes saved)

@@ -58,7 +58,7 @@ app.use(express.urlencoded({extended:true}))
 
 const _dirname = path.resolve()
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://projectblog-frontend2.onrender.com',
     credentials:true
 }))     
 app.use('/api/v1/user',userrouter)

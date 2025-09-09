@@ -13,7 +13,7 @@ import { setLoading, setToken, setUser } from '../redux/authSlice.js'
 const Login = () => {
   const [showPassword,setShowPassword] = useState(false)
   const {loading} = useSelector(store=>store.auth)
-  const {users} = useSelector(store=>store.auth)
+  const {user} = useSelector(store=>store.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
     const [input, setInput] = useState({

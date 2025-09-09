@@ -10,6 +10,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { Label } from '@radix-ui/react-dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { Textarea } from "@/components/ui/textarea"
+
 import {
     Dialog,
     DialogClose,
@@ -67,11 +68,13 @@ const Profile = () => {
         if (input?.file) {
             formData.append('file', input?.file)
         }
+        const token = useSelector((state) => state.auth.token);
         try {
             dispatch(setLoading(true))
             const res = await axios.put(`https://projectblog-3.onrender.com/api/v1/user/profile/update`, formData, {
                 headers: {
-                    "Content-Type": "multipart/form-data"
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`
                 },
                 withCredentials: true
             })

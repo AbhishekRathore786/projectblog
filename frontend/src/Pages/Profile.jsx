@@ -29,7 +29,7 @@ import { Loader2 } from 'lucide-react';
 import TotalProperty from '@/components/TotalProperty';
 
 const Profile = () => {
-    const { user, loading } = useSelector(store => store.auth)
+    const { user, loading,token } = useSelector(store => store.auth)
 
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch()
@@ -68,7 +68,6 @@ const Profile = () => {
         if (input?.file) {
             formData.append('file', input?.file)
         }
-        const token = useSelector((state) => state.auth.token);
         try {
             dispatch(setLoading(true))
             const res = await axios.put(`https://projectblog-3.onrender.com/api/v1/user/profile/update`, formData, {

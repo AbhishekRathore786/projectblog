@@ -9,7 +9,7 @@ import { Button } from '../components/ui/button'
 import { toast } from 'sonner'
 import axios from 'axios'
 import { useDispatch, useSelector} from 'react-redux'
-import { setLoading, setUser } from '../redux/authSlice.js'
+import { setLoading, setToken, setUser } from '../redux/authSlice.js'
 const Login = () => {
   const [showPassword,setShowPassword] = useState(false)
   const {loading} = useSelector(store=>store.auth)
@@ -41,6 +41,7 @@ const Login = () => {
         })
         if(res.data.success){
           dispatch(setUser(res.data.user))
+          dispatch(setToken(res.data.token));
           navigate('/')
          toast.success(`Welcome ${res.data.user.firstName}`)
         // toast.success(`Welcome ${users.firstName} !`)

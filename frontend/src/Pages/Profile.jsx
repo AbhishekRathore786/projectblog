@@ -73,8 +73,7 @@ const Profile = () => {
             dispatch(setLoading(true))
             const res = await axios.put(`https://projectblog-3.onrender.com/api/v1/user/profile/update`, formData, {
                 headers: {
-                    "Content-Type": "multipart/form-data",
-                    Authorization: `Bearer ${token}`
+                    "Content-Type": "multipart/form-data"
                 },
                 withCredentials: true
             })

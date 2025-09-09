@@ -148,7 +148,7 @@ const navbar = () => {
     //   </div>
 
     // </div>
-    <div className='py-2 fixed w-full bg-gray-200 dark:bg-gray-800 border-b-gray-300 z-50'>
+    <div className='py-2  w-full bg-gray-200 dark:bg-gray-800 border-b-gray-300 z-50'>
   <div className='max-w-7xl mx-auto flex flex-wrap justify-between items-center px-4 md:px-6 gap-y-4'>
     
     {/* Logo + Search */}

@@ -32,7 +32,7 @@ const Signup = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(user)
+    // alert(user)
     try {
       dispatch(setLoading(true))          //http://localhost:3000/api/v1/user/register
       const res = await axios.post(`https://projectblog-3.onrender.com/api/v1/user/register`,user,{

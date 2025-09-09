@@ -31,6 +31,7 @@ import TotalProperty from '@/components/TotalProperty';
 const Profile = () => {
     const { user, loading,token } = useSelector(store => store.auth)
     alert("token is "+token)
+    console.log(token)
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch()
     const [input, setInput] = useState({

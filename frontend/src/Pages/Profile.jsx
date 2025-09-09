@@ -23,14 +23,14 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoading, setUser } from '@/redux/authSlice'
+import { setLoading, setToken, setUser } from '@/redux/authSlice'
 import { toast } from 'sonner'
 import { Loader2 } from 'lucide-react';
 import TotalProperty from '@/components/TotalProperty';
 
 const Profile = () => {
     const { user, loading,token } = useSelector(store => store.auth)
-
+    alert("token is "+token)
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch()
     const [input, setInput] = useState({
@@ -81,6 +81,7 @@ const Profile = () => {
                 setOpen(false)
                 toast.success(res.data.message)
                 dispatch(setUser(res.data.user))
+                dispatch(setToken(res.data.token));
             }
         } catch (error) {
             console.log("error in updating and the reason is " + error)
